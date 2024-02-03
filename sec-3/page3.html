@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 1 - HTML - Page 3</title>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./page2.html">Page 2</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    
+    <h2>
+      Formulario
+    </h2>
+
+    <form name="form1" action="#" enctype="multipart/form-data">
+      <!-- Texto corto -->
+      <fieldset>
+        <legend>Texto corto</legend>
+        
+				<label>
+          Texto:
+					<input style="display: block; margin-bottom: 15px;" type="text" name="nombre" value="Genís" placeholder="Nombre" size="20" autocomplete="off" autofocus>
+        </label>
+        
+        <label>
+					Busqueda:
+        	<input style="display: block; margin-bottom: 15px;" type="search" placeholder="Buscar">
+				</label>
+        
+				<label>
+					Telefono:
+					<input style="display: block; margin-bottom: 15px;" type="tel" placeholder="+00 000 000000">	
+				</label>
+
+				<label>
+					Url:
+					<input style="display: block; margin-bottom: 15px;" type="url" placeholder="web.com">
+				</label>
+        
+				<label>
+					Correo:
+					<input style="display: block; margin-bottom: 15px;" type="email" placeholder="nombre@ejemplo.com">
+				</label>
+        
+				<label>
+					Password:
+					<input style="display: block; margin-bottom: 15px;" type="password" placeholder="Contraseña">
+				</label>
+        
+				<label>
+					Campo oculto:
+					<input style="display: block; margin-bottom: 15px;" type="hidden" name="form-num" value="0001"> <!-- se puede añadir información oculta que no queremos mostrar en la web pero queremos que se envie con el form -->
+				</label>
+      
+			</fieldset>
+
+      <!-- Númerico / Rango -->
+      <fieldset>
+				<legend>Numerico / Rango</legend>
+        
+				<label>
+					Número entero:
+	        <input style="display: block; margin-bottom: 15px;" type="number" value="25" min="0" max="100" step="5">
+				</label>
+        
+				<label>
+					Número decimal:
+					<input style="display: block; margin-bottom: 15px;" type="number" value="25.25" min="0" max="100" step="0.25"> <!-- manualmente se puede entrar un numero incorrecto e.g. 25.32-->
+				</label>
+        
+				<label>
+					Rango entero:
+					<input style="display: block" type="range" value="25" min="0" max="100" step="5" onInput="this.nextElementSibling.value = this.value"> <!-- se añade lo siguiente para modificar el output mediante js --> <!-- onInput="this.nextElementSibling.value = this.value" -->
+					<output style="display: block; margin-bottom: 15px;">25</output>
+				</label>
+        
+				<label>
+					Rango decimal:
+					<input style="display: block" type="range" value="25.25" min="0" max="100" step="0.25" onInput="this.nextElementSibling.value = this.value"> <!-- se añade lo siguiente para modificar el output mediante js --> <!-- onInput="this.nextElementSibling.value = this.value" -->
+					<output style="display: block; margin-bottom: 15px;">25.25</output>
+				</label>
+
+      </fieldset>
+
+      
+      <!-- Fecha -->
+      <fieldset>
+				<legend>Fecha</legend>
+
+				<label>
+					Fecha:
+					<input style="display: block; margin-bottom: 15px;" type="date" value="1991-03-21" min="1991-01-01" max="1991-12-31">
+				</label>
+        
+        Mes:
+        <input style="display: block; margin-bottom: 15px;" type="month" value="1991-03" min="1991-01" max="1991-12">
+        
+        Semana:
+        <input style="display: block; margin-bottom: 15px;" type="week" value="1991-W12" min="1991-W2" max="1991-W52">
+  
+        Hora:
+        <input style="display: block; margin-bottom: 15px;" type="time" value="05:00" min="05:00" max="21:00" step="3600">
+        
+        Fecha - hora local:
+        <input style="display: block; margin-bottom: 15px;" type="datetime-local" value="1991-03-21T10:20" min="1991-01-01T00:00" max="1991-12-31T23:59">  
+      </fieldset>
+      
+      <!-- Verdadero / Falso -->
+      <fieldset>
+				<legend>Verdadero / Falso</legend>
+				
+				<label>
+					<input style="display: inline; margin-bottom: 15px;" type="checkbox" name="read" checked>
+					He leído
+				</label>
+
+			</fieldset>
+      
+      <!-- Una de varias opciones -->
+			<fieldset>
+				<legend>Una, de varias opciones</legend>
+				
+				<label style="display: block">
+					Radio:
+					<label>
+						<input style="margin-bottom: 15px" type="radio" name="gender" value="male" checked> Hombre
+					</label>
+					<label>
+						<input style="margin-bottom: 15px" 15px;" type="radio" name="gender" value="female"> Mujer
+					</label>
+
+				</label>
+
+				<label>
+					Select:
+					<select style="margin-bottom: 15px">
+						<option disabled selected>-Selecciona la opción deseada-</option>
+						<optgroup label="Mamiferos" disabled>
+							<option value="dog">Perro</option>
+							<option value="cat">Gato</option>
+						</optgroup>
+						<optgroup label="Peces">
+							<option value="fish">Pez</option>
+						</optgroup>
+						<optgroup label="Reptiles">
+							<option value="turtle">Tortuga</option>
+						</optgroup>
+					</select>
+				</label>
+
+			</fieldset>
+      
+      <!-- Varias de varias opciones -->
+			<fieldset>
+				<legend>Varias, de varias opciones</legend>
+
+				<label>
+					Select múltiple:
+					<select style="display: block; margin-bottom: 15px; height: 137px" multiple>
+						<option disabled>-Selecciona múltiples opciones-</option>
+						<optgroup label="Mamíferos" disabled>
+							<option value="dog">Perro</option>
+							<option value="cat">Gato</option>
+						</optgroup>
+						<optgroup label="Peces">
+							<option value="fish">Pez</option>
+						</optgroup>
+						<optgroup label="Reptiles">
+							<option value="turtle">Tortuga</option>
+						</optgroup>
+					</select>
+				</label>
+
+      	<label style="display: block; margin-bottom: 15px">
+					Checkbox múltiple:
+					<Label>
+						<input type="checkbox" name="fish" checked>
+						Pez
+					</Label>
+					<label>
+						<input type="checkbox" name="turtle">
+						Tortuga
+					</label>
+				</label>
+
+			</fieldset>
+			
+			<!-- Color -->
+			<fieldset>
+				<legend>Color</legend>
+
+				<label style="display: block; margin-bottom: 15px">
+					Selecciona un color:
+					<input type="color" value="#AA1A1A">
+				</label>
+
+			</fieldset>
+
+      <!-- Opción única abierta -->
+      <fieldset>
+				<legend>Opción única abierta</legend>
+
+				<label style="display: block; margin-bottom: 15px">
+					Texto + Datalist:
+					<input style="display: block" type="text" list="animals">
+					<datalist id="animals">
+						<option value="dog">Perro</option>
+						<option value="cat">Gato</option>
+						<option value="fish">Pez</option>
+						<option value="turtle">Tortuga</option>
+					</datalist>
+				</label>
+
+				<label style="display: block; margin-bottom: 15px">
+					Rango + Datalist:
+					<input id="satisfaccion-input" style="display: block" type="range" list="rango" value="3" min="1" max="5">
+					<output id="satisfaccion-output"></output>
+					<datalist id="rango">
+						<option class="satisfaccion-options" value="1">Muy decepcionado</option>
+						<option class="satisfaccion-options" value="2">Decepcionado</option>
+						<option class="satisfaccion-options" value="3">Indiferente</option>
+						<option class="satisfaccion-options" value="4">Satisfecho</option>
+						<option class="satisfaccion-options" value="5">Muy satisfecho</option>
+					</datalist>
+				</label>
+						<!-- script js para rango + datalist -->
+						<script>
+							const input = document.querySelector("#satisfaccion-input");
+							const options = document.querySelectorAll(".satisfaccion-options");
+							const output = document.querySelector("#satisfaccion-output");
+
+							function updateOutput() {
+								output.value = options[input.value - 1].textContent;
+							}
+
+							input.addEventListener("input", () => updateOutput());
+							updateOutput();
+						</script>
+
+				<label style="display: block; margin-bottom: 15px">
+					Fecha + Datalist:
+					<input type="date" list="fecha-data" value="2024-03-21">
+					<datalist id="fecha-data">
+						<option value="2024-02-21">21 de Febrero</option>
+						<option value="2024-03-21">21 de Marzo</option>
+						<option value="2024-04-21">21 de Abril</option>
+					</datalist>
+				</label>
+
+				<label style="display: block; margin-bottom: 15px">
+					Color + Datalist:
+					<input type="color" list="color-data" value="#aa1a1a">
+					<datalist id="color-data">
+						<option value="#3f3f3f"></option>
+						<option value="#c2c2c2"></option>
+						<option value="#aa1a1a"></option>
+					</datalist>
+				</label>
+
+			</fieldset>
+
+      <!-- Archivos -->
+			<!-- en la etiqueta form hay que poner enctype="multipart/form-data" -->
+      <fieldset>
+				<legend>Archivos</legend>
+
+				<label style="display: block; margin-bottom: 15px;">
+					Seleccionar una imagen:
+					<input type="file" accept="image/*">
+				</label>
+
+				<label style="display: block; margin-bottom: 15px;">
+					Seleccionar un archivo de audio:
+					<input type="file" accept="audio/*">
+				</label>
+
+				<label style="display: block; margin-bottom: 15px;">
+					Seleccionar un video:
+					<input type="file" accept="video/*">
+				</label>
+
+				<label style="display: block; margin-bottom: 15px;">
+					Seleccionar un pdf:
+					<input type="file" accept="application/pdf">
+				</label>
+
+				<label style="display: block; margin-bottom: 15px;">
+					Seleccionar un archivo comprimido:
+					<input type="file" accept="application/zip">
+				</label>
+
+				<hr>
+
+				<label style="display: block; margin-bottom: 15px">
+					Seleccionar <strong>múltiples</strong> imágenes:
+					<input type="file" accept="image/*" multiple>
+				</label>
+
+			</fieldset>
+
+      <!-- Texto largo -->
+      <fieldset>
+				<legend>Texto largo</legend>
+
+				<label>
+					Descripción:
+					<textarea style="display: block; margin-bottom: 15px;" name="descripcion" cols="50" rows="6" placeholder="Escribe algo..."></textarea>
+				</label>
+
+			</fieldset>
+
+      <!-- Progress -->
+			<fieldset>
+				<legend>Progress</legend>
+
+				<label id="progress-label" for="progress-bar">
+					Completado:
+				</label>
+				<progress id="progress-bar" value="50" max="100">50% <!--accesibilidad--> </progress>
+				
+			</fieldset>
+
+					<!-- js para darle vida y lógica (ejemplo poco práctico) -->
+					<script>
+						const progress = document.querySelector("progress");
+						const progressLabel = document.querySelector("#progress-label")
+						const time = 500; // 0.5 seg
+
+						function increment() {
+							progress.value += 10;
+							progress.textContent = `${progress.value}%`;
+							progressLabel.textContent = `Completado al ${progress.value}%`;
+							if (progress.value < 100) {
+								setTimeout(increment, time);
+							}
+						}
+
+						setTimeout(increment, time);
+					</script>
+
+      <!-- Meter -->
+			<fieldset>
+				<legend>Meter</legend>
+
+				<label style="display: block;" for="middle-meter">Middle metter</label>
+				<meter style="display: block;" id="middle-meter" value="-50" min="-100" max="100" low="-33" high="33" optimum="0"></meter>
+				<meter style="display: block;" id="middle-meter" value="-10" min="-100" max="100" low="-33" high="33" optimum="0"></meter>
+				<meter style="display: block;" id="middle-meter" value="45" min="-100" max="100" low="-33" high="33" optimum="0"></meter>
+
+				<hr>
+				
+				<label style="display: block;" for="stress-meter">Stress metter</label>
+				<meter style="display: block;" id="stress-meter" value="25" min="0" max="100" low="33" high="66" optimum="0"></meter>
+				<meter style="display: block;" id="stress-meter" value="50" min="0" max="100" low="33" high="66" optimum="0"></meter>
+				<meter style="display: block;" id="stress-meter" value="75" min="0" max="100" low="33" high="66" optimum="0"></meter>
+
+				<hr>
+
+				<label style="display: block;" for="battery-meter">Battery metter</label>
+				<meter style="display: block;" id="battery-meter" value="20" min="0" max="100" low="25" high="75" optimum="100"></meter>
+				<meter style="display: block;" id="battery-meter" value="50" min="0" max="100" low="25" high="75" optimum="100"></meter>
+				<meter style="display: block;" id="battery-meter" value="80" min="0" max="100" low="25" high="75" optimum="100"></meter>
+			</fieldset>
+
+      <!-- Submit -->
+			<fieldset>
+				<legend>Submit</legend>
+
+				<input type="submit" value="Enviar">
+				<input type="image" src="./resources/img/enviar.png" style="height: 30px;" alt="Enviar">
+				<input type="button" value="Accion x (no enviar)">
+				<input type="reset" value="Borrar formulario">
+			</fieldset>
+
+    </form>
+
+  </main>
+
+</body>
+</html>
